@@ -6,37 +6,17 @@
     <title></title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <style type="text/css">
-      #homeLoading{
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        margin-left: -25px;
-        margin-top: -25px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        border: 5px solid #BEBEBE;
-        border-left: 5px solid #498aca;
-        animation: load 1s linear infinite;
-        -moz-animation:load 1s linear infinite;
-        -webkit-animation: load 1s linear infinite;
-        -o-animation:load 1s linear infinite;
-      }
-      @-webkit-keyframes load
-      {
-        from{-webkit-transform:rotate(0deg);}
-        to{-webkit-transform:rotate(360deg);}
-      }
-      @keyframes load
-      {
-        from{-webkit-transform:rotate(0deg);}
-        to{-webkit-transform:rotate(360deg);}
-      }
+    #wrapper{
+      width:1200px;
+      margin: 0 auto;
+    }
   </style>
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
+    <div id="wrapper">
     <div id="app">
-      <div id="homeLoading"></div>
+
     </div>
+  </div>
   </body>
 </html>
