@@ -1,10 +1,8 @@
 <template>
   <div>
     <header-com ></header-com>
-    <menu-com></menu-com>
+    <menu-com :list="menuData"></menu-com>
     <div style="height:500px;">
-    
-    
     </div>
     <footer-com></footer-com>
   </div>
@@ -22,7 +20,20 @@ export default {
   },
   data () {
     return {
-      
+      menuData: [
+        {
+          name: '考试资讯',
+          path: '/kaoshi'
+        },
+        {
+          name: '公示公告',
+          path: '/kaoshi'
+        },
+        {
+          name: '考试项目',
+          path: '/kaoshi'
+        }
+      ]
     }
   },
   methods: {
