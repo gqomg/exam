@@ -1,9 +1,7 @@
 <template>
  <div class="n_nav xz">
     <dl style="padding-left:0">
-        <dd class="d0"><a href="http://www.neea.edu.cn/html1/folder/16093/614-1.htm" target="_blank">考试资讯</a></dd>
-        <dd class="d1"><a href="http://www.neea.edu.cn/html1/category/1508/151-1.htm" target="_blank">公示公告</a></dd>
-        <dd class="d2" style="margin:0 80px 0 0"><a href="http://www.neea.edu.cn/html1/folder/16103/1271-1.htm" target="_blank">考试项目</a></dd>
+        <dd v-for="(item, i) in list" :key="i"><a :href="item.path" target="_blank">{{item.name}}</a></dd>
     </dl>
 </div>
 </template>
@@ -11,6 +9,12 @@
 <script>
 export default {
   name: 'MenuCom',
+  props: {
+    list: {
+      type: Array,
+      required: true  
+    }
+  },
   data () {
     return {
     }
