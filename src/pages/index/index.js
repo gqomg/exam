@@ -5,6 +5,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
+import axios from 'axios'
 import 'font-awesome/css/font-awesome.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '@a/css/fonts.css'
@@ -20,6 +21,7 @@ window._ = _
 window.jQuery = window.$ = $
 require('bootstrap/dist/js/bootstrap.min.js')
 Vue.use(ElementUI)
+Vue.prototype.$axios = axios
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

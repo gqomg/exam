@@ -4,6 +4,7 @@ import Auth from '@a/js/myAuth.js'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 const index = (resolve) => { require(['../views/index.vue'], resolve) }
+const baoming = (resolve) => { require(['../views/baoming.vue'], resolve) }
 
 NProgress.configure({ showSpinner: false })
 Vue.use(Router)
@@ -13,6 +14,11 @@ const router = new Router({
       path: '/',
       name: 'index',
       component: index
+    },
+    {
+      path: '/baoming',
+      name: 'baoming',
+      component: baoming
     }
   ]
 })

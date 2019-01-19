@@ -1,7 +1,7 @@
 <template>
  <div class="n_nav xz">
     <dl style="padding-left:0">
-        <dd v-for="(item, i) in list" :key="i"><a :href="item.path" target="_blank">{{item.name}}</a></dd>
+        <dd v-for="(item, i) in list" :key="i"><a :href="item.path" target="_blank" :class="{'active':active==i}">{{item.name}}</a></dd>
     </dl>
 </div>
 </template>
@@ -13,6 +13,9 @@ export default {
     list: {
       type: Array,
       required: true  
+    },
+    active: {
+      type: Number
     }
   },
   data () {
@@ -48,6 +51,9 @@ export default {
     color: #003e7d;
     font-size:14px;
     letter-spacing: 1px;
+}
+.n_nav dl dd a.active{
+  color: #ff7f00;
 }
 .n_nav dl dd a:hover {
     color: #ff7f00;
