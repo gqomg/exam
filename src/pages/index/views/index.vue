@@ -149,8 +149,11 @@ export default {
                 url: APIS.login,
                 params: this.loginForm
             }).then(res => {
-                if(res.code == 0){
-                   myCookie.set('ACCESS_TOKEN', res.ACCESS_TOKEN)
+                if(res.data.code == 0){
+                   myCookie.set('ACCESS_TOKEN', res.data.ACCESS_TOKEN)
+                   this.$router.push({
+                       path:'/baoming'
+                   })
                 }else{
                     this.$message.error(res.msg)
                 }

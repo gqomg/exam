@@ -3,6 +3,7 @@
  * @author guoqing
  */
 let ip = 'http://192.168.0.102:8080/web-front'
+// let ip = 'http://192.168.10.78:8080/web-front'
 let APIS = {}
 APIS.login = ip + '/login/login'
 APIS.captcha = ip + '/login/captcha.jpg'
