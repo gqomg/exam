@@ -16,7 +16,7 @@
     <a href=""><p style="height:70px"><img :src="icon1"></p>学习资源</a>
     </li>
     <li style="float:left; text-align:center; margin-right:15px; line-height:1;">
-    <a href=""><p style="height:70px"><img :src="icon2"></p>安全考核</a>
+    <a href="/#/baoming"><p style="height:70px"><img :src="icon2"></p>安全考核</a>
     </li>
     <li style="float:left; text-align:center; line-height:1;">
     <a href=""><p style="height:70px"><img :src="icon3"></p>个人信息</a>

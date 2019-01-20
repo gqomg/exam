@@ -15,7 +15,7 @@
                     <el-form-item label="验证码" style="margin-bottom:5px !important;" prop="captcha">
                         <el-row>
                             <el-col :span="15">
-                                <el-input v-model="loginForm.captcha" :maxlength="5" required @keyup.enter="onSubmit"></el-input>
+                                <el-input v-model="loginForm.captcha" :maxlength="5"  @keyup.enter.native="onSubmit"></el-input>
                             </el-col>
                             <el-col :span="9">
                                 <img :src="captcha" @click="getCaptcha" width="70" height="36" style="vertical-align:middle;margin-left:5px;" class="avatar">
@@ -29,10 +29,10 @@
                 <div class="login-btn" @click="onSubmit">登&nbsp;&nbsp;录</div>
             </div>
 
-            <div v-if="loginStatus">
-                张三<br>
+            <div v-if="loginStatus" style="padding:20px; text-align:center; line-height:2;">
+                {{ userName }}<br>
                 青岛石化港口作业公司<br>
-                <a href="">退出</a><br>
+                <a href="" style="color:rgb(0, 62, 125)">退出</a><br>
                 您有考试即将开始
             </div>
         </div>
@@ -135,6 +135,7 @@ export default {
         }]
       },
       captcha: APIS.captcha,
+      userName: myCookie.get('userName'),
       loginStatus: myCookie.get('ACCESS_TOKEN')
     }
   },
@@ -151,11 +152,11 @@ export default {
             }).then(res => {
                 if(res.data.code == 0){
                    myCookie.set('ACCESS_TOKEN', res.data.ACCESS_TOKEN)
-                   this.$router.push({
-                       path:'/baoming'
-                   })
+                   myCookie.set('userName', this.loginForm.userName)
+                   this.loginStatus = true
                 }else{
-                    this.$message.error(res.msg)
+                    this.$message.error(res.data.msg)
+                    this.getCaptcha()
                 }
             })
           }
